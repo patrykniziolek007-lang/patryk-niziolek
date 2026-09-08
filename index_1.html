@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patryk Niziołek — strony internetowe dla firm</title>
+<meta name="description" content="Projektuję i buduję szybkie, przejrzyste strony internetowe dla małych i średnich firm.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Work Sans', system-ui, sans-serif; background: #FBFAF7; color: #1C1C1A; overflow-x: hidden; }
+  h1, h2, h3 { font-family: 'Sora', system-ui, sans-serif; margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  p { margin: 0; }
+  img { max-width: 100%; }
+  .anchor-section { scroll-margin-top: 84px; }
+  .cta-primary:hover { opacity: 0.88; }
+  .cta-secondary:hover { border-color: #1C1C1A; }
+  .nav-link:hover { opacity: 0.6; }
+  .example-card { transition: transform 0.15s ease; }
+  .example-card:hover { transform: translateY(-4px); }
+  input:focus, textarea:focus { outline: 2px solid #0B6E6E; outline-offset: 1px; }
+
+  @media (max-width: 760px) {
+    .nav-links { display: none !important; }
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .hero-art { display: none !important; }
+    .hero-title { font-size: 36px !important; }
+    .grid-3 { grid-template-columns: 1fr !important; }
+    .grid-4 { grid-template-columns: 1fr 1fr !important; }
+    .section-pad { padding-left: 24px !important; padding-right: 24px !important; }
+    .contact-grid { grid-template-columns: 1fr !important; }
+    .about-grid { grid-template-columns: 1fr !important; text-align: center !important; justify-items: center !important; }
+    .timeline-line { display: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div style="position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; background: rgba(251,250,247,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid #EAE7E0;">
+  <div class="section-pad" style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1120px; padding: 16px 40px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 28px; height: 28px; border-radius: 6px; background: #0B6E6E; display: flex; align-items: center; justify-content: center; color: #FBFAF7; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 15px;">P</div>
+      <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px;">Patryk Niziołek</span>
+    </div>
+    <div class="nav-links" style="display: flex; align-items: center; gap: 32px; font-size: 14px; font-weight: 500;">
+      <a class="nav-link" href="#uslugi">Usługi</a>
+      <a class="nav-link" href="#realizacje">Przykłady</a>
+      <a class="nav-link" href="#proces">Proces</a>
+      <a class="nav-link" href="#o-mnie">O mnie</a>
+      <a class="nav-link" href="#kontakt">Kontakt</a>
+    </div>
+    <a class="cta-primary" href="#kontakt" style="background: #0B6E6E; color: #FBFAF7; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; white-space: nowrap;">Napisz do mnie</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div style="position: relative; display: flex; justify-content: center; padding: 96px 40px 88px; overflow: hidden;" class="section-pad">
+  <div style="position: absolute; top: -140px; right: -100px; width: 460px; height: 460px; border-radius: 50%; background: #0B6E6E; opacity: 0.08; filter: blur(70px); pointer-events: none;"></div>
+  <div style="position: absolute; bottom: -160px; left: -120px; width: 360px; height: 360px; border-radius: 50%; background: #0B6E6E; opacity: 0.05; filter: blur(70px); pointer-events: none;"></div>
+  <div class="hero-grid" style="position: relative; width: 100%; max-width: 1120px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start;">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0B6E6E;">Strony internetowe dla firm</div>
+      <h1 class="hero-title" style="font-size: 52px; line-height: 1.08; font-weight: 800; letter-spacing: -0.01em;">Twoja firma zasługuje na stronę, która naprawdę sprzedaje</h1>
+      <p style="font-size: 17px; line-height: 1.6; color: #514F49; max-width: 480px;">Projektuję i buduję szybkie, przejrzyste strony internetowe dla małych i średnich firm — bez zbędnych ozdobników, za to z naciskiem na to, żeby klienci Cię znaleźli i zostawili kontakt.</p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+        <a class="cta-primary" href="#kontakt" style="background: #0B6E6E; color: #FBFAF7; padding: 14px 26px; border-radius: 6px; font-size: 15px; font-weight: 600;">Umów bezpłatną rozmowę</a>
+        <a class="cta-secondary" href="#proces" style="border: 1.5px solid #D8D4CB; color: #1C1C1A; padding: 14px 26px; border-radius: 6px; font-size: 15px; font-weight: 600;">Zobacz, jak pracuję</a>
+      </div>
+    </div>
+    <div class="hero-art" style="display: flex; justify-content: center;">
+      <div style="width: 100%; max-width: 420px; background: #FFFFFF; border: 1px solid #EAE7E0; border-radius: 12px; box-shadow: 0 24px 48px -24px rgba(28,28,26,0.18); overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 6px; padding: 12px 16px; border-bottom: 1px solid #EAE7E0;">
+          <div style="width: 9px; height: 9px; border-radius: 50%; background: #E3E0D8;"></div>
+          <div style="width: 9px; height: 9px; border-radius: 50%; background: #E3E0D8;"></div>
+          <div style="width: 9px; height: 9px; border-radius: 50%; background: #E3E0D8;"></div>
+        </div>
+        <div style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="height: 14px; width: 55%; border-radius: 3px; background: #EDEAE2;"></div>
+          <div style="height: 34px; width: 85%; border-radius: 4px; background: #0B6E6E; opacity: 0.14;"></div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 4px;">
+            <div style="height: 64px; border-radius: 6px; background: #F3F1EB;"></div>
+            <div style="height: 64px; border-radius: 6px; background: #F3F1EB;"></div>
+            <div style="height: 64px; border-radius: 6px; background: #F3F1EB;"></div>
+          </div>
+          <div style="height: 10px; width: 90%; border-radius: 3px; background: #EDEAE2; margin-top: 6px;"></div>
+          <div style="height: 10px; width: 70%; border-radius: 3px; background: #EDEAE2;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- USŁUGI -->
+<div id="uslugi" class="anchor-section section-pad" style="display: flex; justify-content: center; padding: 24px 40px 88px;">
+  <div style="width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 560px;">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0B6E6E;">Usługi</div>
+      <h2 style="font-size: 32px; font-weight: 700;">Czym się zajmuję</h2>
+    </div>
+    <div class="grid-3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+
+      <div style="background: #FFFFFF; border: 1px solid #EAE7E0; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="color: #0B6E6E;">
+          <rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6"></rect>
+          <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+        <h3 style="font-size: 18px; font-weight: 700;">Strona wizytówka</h3>
+        <p style="font-size: 14.5px; line-height: 1.6; color: #514F49;">Profesjonalna prezentacja Twojej firmy w sieci: oferta, dane kontaktowe, opinie klientów — wszystko w jednym, przejrzystym miejscu.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #EAE7E0; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="color: #0B6E6E;">
+          <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"></circle>
+          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"></circle>
+          <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+        </svg>
+        <h3 style="font-size: 18px; font-weight: 700;">Landing page pod kampanie</h3>
+        <p style="font-size: 14.5px; line-height: 1.6; color: #514F49;">Strona zoptymalizowana pod jedną akcję: zapis, zapytanie ofertowe albo zakup — pod reklamy w Google i social media.</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #EAE7E0; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="color: #0B6E6E;">
+          <path d="M4 12a8 8 0 0 1 13.5-5.8M20 12a8 8 0 0 1-13.5 5.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+          <path d="M17.5 3.5v3.2h-3.2M6.5 20.5v-3.2h3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <h3 style="font-size: 18px; font-weight: 700;">Odświeżenie istniejącej strony</h3>
+        <p style="font-size: 14.5px; line-height: 1.6; color: #514F49;">Masz już stronę, ale wygląda na przestarzałą albo wolno się ładuje? Robię redesign i przyspieszam jej działanie.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- REALIZACJE / PRZYKŁADY -->
+<div id="realizacje" class="anchor-section section-pad" style="display: flex; justify-content: center; padding: 24px 40px 88px; background: #F3F1EB;">
+  <div style="width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px;">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0B6E6E;">Przykłady</div>
+      <h2 style="font-size: 32px; font-weight: 700;">Style, w jakich mogę zaprojektować Twoją stronę</h2>
+      <p style="font-size: 15px; line-height: 1.6; color: #514F49;">Kliknij w wybrany przykład, żeby wejść na działającą stronę demonstracyjną i przetestować ją tak, jak zrobiłby to Twój klient.</p>
+    </div>
+    <div class="grid-3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+
+      <a class="example-card" href="demo-kawiarnia.html" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: #FBF3E7; border: 1px solid #EFE2CC; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 32px -20px rgba(28,28,26,0.16);">
+          <div style="display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid #EFE2CC;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #E3D3B4;"></div>
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #E3D3B4;"></div>
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #E3D3B4;"></div>
+          </div>
+          <div style="padding: 18px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="height: 10px; width: 40%; border-radius: 3px; background: #C1613B;"></div>
+            <div style="height: 46px; width: 100%; border-radius: 6px; background: #C1613B; opacity: 0.18;"></div>
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+              <div style="height: 40px; border-radius: 5px; background: #F1E2CB;"></div>
+              <div style="height: 40px; border-radius: 5px; background: #F1E2CB;"></div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size: 15px; font-weight: 700; color: #1C1C1A;">Kawiarnie i gastronomia</div>
+        <p style="font-size: 13.5px; line-height: 1.5; color: #514F49;">Ciepłe barwy, menu z zakładkami i rezerwacja stolika w kilku kliknięciach.</p>
+        <span style="font-size: 13.5px; font-weight: 600; color: #0B6E6E;">Otwórz demo &rarr;</span>
+      </a>
+
+      <a class="example-card" href="demo-salon-urody.html" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: #FBEFF1; border: 1px solid #F3DDE1; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 32px -20px rgba(28,28,26,0.16);">
+          <div style="display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid #F3DDE1;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #E9C3CB;"></div>
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #E9C3CB;"></div>
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #E9C3CB;"></div>
+          </div>
+          <div style="padding: 18px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="height: 10px; width: 50%; border-radius: 3px; background: #B85C74;"></div>
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+              <div style="height: 54px; border-radius: 50%; background: #F3D7DD;"></div>
+              <div style="height: 54px; border-radius: 50%; background: #B85C74; opacity: 0.25;"></div>
+              <div style="height: 54px; border-radius: 50%; background: #F3D7DD;"></div>
+            </div>
+            <div style="height: 8px; width: 70%; border-radius: 3px; background: #F3D7DD;"></div>
+          </div>
+        </div>
+        <div style="font-size: 15px; font-weight: 700; color: #1C1C1A;">Salony urody i gabinety</div>
+        <p style="font-size: 13.5px; line-height: 1.5; color: #514F49;">Delikatna kolorystyka i działający formularz rezerwacji wizyty krok po kroku.</p>
+        <span style="font-size: 13.5px; font-weight: 600; color: #0B6E6E;">Otwórz demo &rarr;</span>
+      </a>
+
+      <a class="example-card" href="demo-pracownia.html" style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: #1F2E27; border: 1px solid #2C3D34; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 32px -20px rgba(28,28,26,0.16);">
+          <div style="display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid #2C3D34;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #3C4F45;"></div>
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #3C4F45;"></div>
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #3C4F45;"></div>
+          </div>
+          <div style="padding: 18px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="height: 10px; width: 45%; border-radius: 3px; background: #C9A227;"></div>
+            <div style="height: 46px; width: 100%; border-radius: 6px; border: 1px solid #C9A227; opacity: 0.6;"></div>
+            <div style="height: 8px; width: 80%; border-radius: 3px; background: #3C4F45;"></div>
+            <div style="height: 8px; width: 60%; border-radius: 3px; background: #3C4F45;"></div>
+          </div>
+        </div>
+        <div style="font-size: 15px; font-weight: 700; color: #1C1C1A;">Rzemiosło i manufaktury</div>
+        <p style="font-size: 13.5px; line-height: 1.5; color: #514F49;">Elegancka, ciemna oprawa z filtrowaniem produktów i działającym koszykiem.</p>
+        <span style="font-size: 13.5px; font-weight: 600; color: #0B6E6E;">Otwórz demo &rarr;</span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- PROCES -->
+<div id="proces" class="anchor-section section-pad" style="display: flex; justify-content: center; padding: 88px 40px;">
+  <div style="width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 48px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 560px;">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0B6E6E;">Proces</div>
+      <h2 style="font-size: 32px; font-weight: 700;">Jak wygląda współpraca</h2>
+    </div>
+    <div style="position: relative;">
+      <div class="timeline-line" style="position: absolute; top: 15px; left: 3%; right: 3%; height: 2px; background: #E3E0D8; z-index: 0;"></div>
+      <div class="grid-4" style="position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #0B6E6E; color: #FBFAF7; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px;">1</div>
+          <h3 style="font-size: 16px; font-weight: 700;">Rozmowa i wycena</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #514F49;">Poznaję Twoją firmę i cele, ustalamy zakres i cenę — bez zobowiązań.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #0B6E6E; color: #FBFAF7; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px;">2</div>
+          <h3 style="font-size: 16px; font-weight: 700;">Projekt</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #514F49;">Przygotowuję makietę strony, którą wspólnie dopracowujemy przed budową.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #0B6E6E; color: #FBFAF7; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px;">3</div>
+          <h3 style="font-size: 16px; font-weight: 700;">Budowa</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #514F49;">Koduję stronę od podstaw — szybką, responsywną i gotową pod SEO.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: #0B6E6E; color: #FBFAF7; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px;">4</div>
+          <h3 style="font-size: 16px; font-weight: 700;">Wdrożenie i wsparcie</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: #514F49;">Publikuję stronę i zostaję w kontakcie na wypadek pytań czy poprawek.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- O MNIE -->
+<div id="o-mnie" class="anchor-section section-pad" style="display: flex; justify-content: center; padding: 96px 40px; background: #F3F1EB;">
+  <div class="about-grid" style="width: 100%; max-width: 900px; display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: center;">
+    <div style="width: 180px; height: 180px; border-radius: 50%; border: 2px solid #0B6E6E; display: flex; align-items: center; justify-content: center; background: #FBFAF7; flex-shrink: 0;">
+      <span style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 64px; color: #0B6E6E;">P</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0B6E6E;">O mnie</div>
+      <h2 style="font-size: 30px; font-weight: 700;">Cześć, jestem Patryk</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: #514F49;">Dopiero zaczynam jako freelancer, ale do stron internetowych podchodzę z pełnym zaangażowaniem — bez pośredników i korporacyjnego zamieszania. Pracujesz bezpośrednio ze mną na każdym etapie: wiesz, co się dzieje z Twoim projektem, a ja mam czas, żeby dopilnować każdego szczegółu.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KONTAKT -->
+<div id="kontakt" class="anchor-section section-pad" style="display: flex; justify-content: center; padding: 24px 40px 96px;">
+  <div style="width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 20px;">
+
+    <div class="contact-grid" style="background: #1C1C1A; border-radius: 16px; padding: 56px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="font-size: 28px; font-weight: 700; color: #FBFAF7;">Porozmawiajmy o Twojej stronie</h2>
+        <p style="font-size: 15.5px; line-height: 1.6; color: #C9C6BC; max-width: 420px;">Napisz maila, zadzwoń albo wypełnij formularz obok — odpowiadam szybko i chętnie doradzę, co sprawdzi się w Twojej sytuacji.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+        <a href="mailto:patryk.niziolek007@gmail.com" style="color: #FBFAF7; font-size: 16px; font-weight: 600; border-bottom: 1.5px solid #0B6E6E; padding-bottom: 2px;">patryk.niziolek007@gmail.com</a>
+        <a href="tel:504579494" style="color: #FBFAF7; font-size: 16px; font-weight: 600; border-bottom: 1.5px solid #0B6E6E; padding-bottom: 2px;">504 579 494</a>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #EAE7E0; border-radius: 16px; padding: 40px;">
+
+      <form id="contact-form" style="display: flex; flex-direction: column; gap: 22px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <h3 style="font-size: 19px; font-weight: 700;">Albo napisz od razu tutaj</h3>
+          <p style="font-size: 14.5px; color: #514F49;">Odpiszę w ciągu jednego dnia roboczego.</p>
+        </div>
+
+        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <label for="f-name" style="font-size: 13px; font-weight: 600; color: #514F49;">Imię</label>
+            <input id="f-name" name="name" type="text" required placeholder="Jak mam się zwracać" style="padding: 12px 14px; border-radius: 8px; border: 1.5px solid #DDD8CC; font-size: 15px; font-family: 'Work Sans', system-ui, sans-serif; background: #FBFAF7; color: #1C1C1A;">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <label for="f-email" style="font-size: 13px; font-weight: 600; color: #514F49;">E-mail</label>
+            <input id="f-email" name="email" type="email" required placeholder="twoj@email.pl" style="padding: 12px 14px; border-radius: 8px; border: 1.5px solid #DDD8CC; font-size: 15px; font-family: 'Work Sans', system-ui, sans-serif; background: #FBFAF7; color: #1C1C1A;">
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="f-message" style="font-size: 13px; font-weight: 600; color: #514F49;">Wiadomość</label>
+          <textarea id="f-message" name="message" rows="4" required placeholder="Kilka słów o Twojej firmie i o tym, jakiej strony potrzebujesz" style="padding: 12px 14px; border-radius: 8px; border: 1.5px solid #DDD8CC; font-size: 15px; font-family: 'Work Sans', system-ui, sans-serif; background: #FBFAF7; color: #1C1C1A; resize: vertical;"></textarea>
+        </div>
+
+        <span id="form-error" hidden style="font-size: 13.5px; color: #B0432A; font-weight: 600;">Coś poszło nie tak — spróbuj ponownie albo napisz bezpośrednio na maila powyżej.</span>
+
+        <button type="submit" id="form-submit" style="align-self: flex-start; background: #0B6E6E; color: #FBFAF7; padding: 13px 28px; border-radius: 6px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; font-family: 'Work Sans', system-ui, sans-serif;">Wyślij wiadomość</button>
+      </form>
+
+      <div id="form-thanks" hidden style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start; padding: 10px 0;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="color: #0B6E6E;">
+          <circle cx="12" cy="12" r="9.2" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="m8.4 12.2 2.4 2.4 4.8-4.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <h3 style="font-size: 19px; font-weight: 700;">Dzięki, wiadomość wysłana</h3>
+        <p id="form-thanks-text" style="font-size: 14.5px; color: #514F49;"></p>
+        <button type="button" id="form-again" style="border: 1.5px solid #D8D4CB; background: none; color: #1C1C1A; padding: 11px 22px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Work Sans', system-ui, sans-serif;">Wyślij kolejną wiadomość</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="display: flex; justify-content: center; padding: 28px 40px; border-top: 1px solid #EAE7E0;" class="section-pad">
+  <div style="width: 100%; max-width: 1120px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #8A877E; flex-wrap: wrap; gap: 8px;">
+    <span>© 2026 Patryk Niziołek</span>
+    <span>Strony internetowe dla firm</span>
+  </div>
+</div>
+
+<script>
+  // ============================================================
+  // FORMULARZ KONTAKTOWY — wysyłka przez Formspree
+  //
+  // ZANIM WDROŻYSZ STRONĘ NAPRAWDĘ:
+  // 1. Wejdź na https://formspree.io i załóż darmowe konto.
+  // 2. Utwórz nowy formularz, dostaniesz adres w stylu
+  //    https://formspree.io/f/xxxxxxx
+  // 3. Podmień "TWOJ_ID_FORMULARZA" poniżej na ten adres.
+  // Bez tego kroku formularz pokaże błąd wysyłki — to celowe
+  // zabezpieczenie, żeby nie wyglądał na działający, gdy nie jest.
+  // ============================================================
+  var FORMSPREE_ENDPOINT = "https://formspree.io/f/xyeybwra";
+
+  var form = document.getElementById('contact-form');
+  var errorBox = document.getElementById('form-error');
+  var submitBtn = document.getElementById('form-submit');
+  var thanksBox = document.getElementById('form-thanks');
+  var thanksText = document.getElementById('form-thanks-text');
+  var againBtn = document.getElementById('form-again');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorBox.hidden = true;
+
+    if (FORMSPREE_ENDPOINT.indexOf('TWOJ_ID_FORMULARZA') !== -1) {
+      errorBox.textContent = 'Formularz nie jest jeszcze podłączony — zobacz komentarz w kodzie strony (FORMSPREE_ENDPOINT).';
+      errorBox.hidden = false;
+      return;
+    }
+
+    var name = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    var message = document.getElementById('f-message').value.trim();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Wysyłam...';
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    }).then(function (res) {
+      if (res.ok) {
+        thanksText.textContent = 'Dzięki, ' + name + '. Odpiszę na ' + email + ' najpóźniej następnego dnia roboczego.';
+        form.hidden = true;
+        thanksBox.hidden = false;
+      } else {
+        throw new Error('send failed');
+      }
+    }).catch(function () {
+      errorBox.textContent = 'Coś poszło nie tak — spróbuj ponownie albo napisz bezpośrednio na maila powyżej.';
+      errorBox.hidden = false;
+    }).finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Wyślij wiadomość';
+    });
+  });
+
+  againBtn.addEventListener('click', function () {
+    form.reset();
+    form.hidden = false;
+    thanksBox.hidden = true;
+  });
+</script>
+
+</body>
+</html>

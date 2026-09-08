@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pracownia Klon — demo</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #1F2E27; color: #E9E4D8; font-family: 'Work Sans', system-ui, sans-serif; }
+  a { text-decoration: none; color: inherit; }
+  .klon-btn { cursor: pointer; border: none; font-family: inherit; }
+  .klon-btn:hover { opacity: 0.85; }
+  .klon-link:hover { opacity: 0.6; }
+  .klon-card:hover { border-color: #C9A227 !important; }
+  .chip { cursor: pointer; border: none; font-family: inherit; }
+  @media (max-width: 820px) {
+    .klon-hero { grid-template-columns: 1fr !important; }
+    .klon-nav { display: none !important; }
+    .klon-grid { grid-template-columns: 1fr !important; }
+    .klon-cols { grid-template-columns: 1fr !important; }
+    .klon-pad { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PASEK DEMO -->
+<div style="position: sticky; top: 0; z-index: 50; display: flex; justify-content: center; background: #14201A; border-bottom: 1px solid #2C3D34;">
+  <div class="klon-pad" style="width: 100%; max-width: 1080px; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+    <a href="index.html#realizacje" style="display: flex; align-items: center; gap: 8px; color: #E9E4D8; font-size: 14px; font-weight: 600;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5 8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      Wróć do portfolio
+    </a>
+    <span style="font-size: 12.5px; color: #6F7F74; text-align: right;">Strona demonstracyjna — projekt przykładowy, nie strona istniejącej firmy</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div style="display: flex; justify-content: center; border-bottom: 1px solid #2C3D34;">
+  <div class="klon-pad" style="width: 100%; max-width: 1080px; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+    <span style="font-family: 'Oswald', system-ui, sans-serif; font-weight: 600; font-size: 21px; letter-spacing: 0.08em; text-transform: uppercase; color: #C9A227;">Pracownia Klon</span>
+    <div class="klon-nav" style="display: flex; gap: 28px; font-size: 14px; font-weight: 500;">
+      <a class="klon-link" href="#klon-sklep">Meble</a>
+      <a class="klon-link" href="#klon-pracownia">Pracownia</a>
+      <a class="klon-link" href="#klon-kontakt">Kontakt</a>
+    </div>
+    <button id="cart-toggle" class="klon-btn" style="display: flex; align-items: center; gap: 9px; border: 1.5px solid #C9A227; background: none; color: #C9A227; padding: 9px 18px; border-radius: 4px; font-size: 14px; font-weight: 600; white-space: nowrap;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 7h12l-1.2 10.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M9.2 7V5.8a2.8 2.8 0 0 1 5.6 0V7" stroke="currentColor" stroke-width="1.5"></path></svg>
+      <span id="cart-count-label">Koszyk (0)</span>
+    </button>
+  </div>
+</div>
+
+<!-- KOSZYK -->
+<div id="cart-panel" hidden style="display: flex; justify-content: center; background: #26372E; border-bottom: 1px solid #2C3D34;">
+  <div class="klon-pad" style="width: 100%; max-width: 1080px; padding: 24px 32px; display: flex; flex-direction: column; gap: 14px;">
+    <span style="font-family: 'Oswald', system-ui, sans-serif; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; color: #C9A227;">Twój koszyk</span>
+    <div id="cart-content"></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div style="display: flex; justify-content: center; padding: 80px 32px;" class="klon-pad">
+  <div class="klon-hero" style="width: 100%; max-width: 1080px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start;">
+      <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A227; font-weight: 600;">Meble z litego drewna</span>
+      <h1 style="font-family: 'Oswald', system-ui, sans-serif; font-size: 50px; line-height: 1.08; font-weight: 500; letter-spacing: 0.01em; margin: 0;">Robione ręcznie, na pokolenia</h1>
+      <p style="font-size: 16.5px; line-height: 1.65; color: #9BAA9F; max-width: 430px; margin: 0;">Stoły, krzesła i drobiazgi z dębu i buka — każdy egzemplarz powstaje w naszej pracowni, od surowej deski po olejowane wykończenie.</p>
+      <a class="klon-btn" href="#klon-sklep" style="background: #C9A227; color: #1F2E27; padding: 14px 28px; border-radius: 4px; font-size: 15px; font-weight: 600; margin-top: 4px; display: inline-block;">Zobacz meble</a>
+    </div>
+    <div style="width: 100%; aspect-ratio: 4 / 3; border-radius: 6px; background: linear-gradient(150deg, #3C4F45 0%, #26372E 60%, #1F2E27 100%); border: 1px solid #C9A227; display: flex; align-items: center; justify-content: center;">
+      <svg width="104" height="104" viewBox="0 0 24 24" fill="none" style="color: #C9A227; opacity: 0.75;"><path d="M3 9h18M4.5 9v10M19.5 9v10M3 6.2 12 3l9 3.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.5 9v4.5h7V9" stroke="currentColor" stroke-width="1.1"></path></svg>
+    </div>
+  </div>
+</div>
+
+<!-- SKLEP -->
+<div id="klon-sklep" style="display: flex; justify-content: center; padding: 0 32px 80px; scroll-margin-top: 60px;" class="klon-pad">
+  <div style="width: 100%; max-width: 1080px; display: flex; flex-direction: column; gap: 28px;">
+    <h2 style="font-family: 'Oswald', system-ui, sans-serif; font-size: 32px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; margin: 0;">Nasze meble</h2>
+    <div id="filter-chips" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+    <div id="product-grid" class="klon-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px;"></div>
+    <span style="font-size: 12.5px; color: #6F7F74;">Ceny przykładowe, na potrzeby demonstracji.</span>
+  </div>
+</div>
+
+<!-- PRACOWNIA -->
+<div id="klon-pracownia" style="display: flex; justify-content: center; padding: 0 32px 80px; scroll-margin-top: 60px;" class="klon-pad">
+  <div class="klon-cols" style="width: 100%; max-width: 1080px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+    <div style="width: 100%; aspect-ratio: 3 / 2; border-radius: 6px; background: linear-gradient(200deg, #3C4F45, #26372E);"></div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <h2 style="font-family: 'Oswald', system-ui, sans-serif; font-size: 30px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; margin: 0;">Pracownia</h2>
+      <p style="font-size: 16px; line-height: 1.7; color: #9BAA9F; margin: 0;">Pracujemy w dwie osoby, w warsztacie pod miastem. Drewno kupujemy od lokalnych tartaków, suszymy je u siebie i nie przyspieszamy tego procesu — dlatego na stół czeka się kilka tygodni, ale służy dziesiątki lat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- KONTAKT -->
+<div id="klon-kontakt" style="display: flex; justify-content: center; padding: 44px 32px; border-top: 1px solid #2C3D34; scroll-margin-top: 60px;" class="klon-pad">
+  <div class="klon-cols" style="width: 100%; max-width: 1080px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-family: 'Oswald', system-ui, sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase; color: #C9A227;">Pracownia Klon</span>
+      <span style="font-size: 14px; color: #6F7F74;">ul. Tartaczna 3</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #6F7F74; font-weight: 600;">Warsztat otwarty</span>
+      <span style="font-size: 14px; color: #9BAA9F;">Pon–Pt 8:00–16:00</span>
+      <span style="font-size: 14px; color: #9BAA9F;">Sob po umówieniu</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #6F7F74; font-weight: 600;">Kontakt</span>
+      <span style="font-size: 14px; color: #9BAA9F;">pracownia@przyklad.pl</span>
+      <span style="font-size: 14px; color: #9BAA9F;">000 000 000</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  var CATALOG = [
+    { id: 'stol-dab', name: 'Stół "Dąb"', cat: 'stoly', price: 3200, desc: 'Lity dąb, blat 200 × 90 cm, olejowany na naturalny kolor.', swatch: 'linear-gradient(150deg, #6B5335, #3E3020)' },
+    { id: 'stol-rozk', name: 'Stół rozkładany', cat: 'stoly', price: 4100, desc: 'Rozkładany do 260 cm, mechanizm ukryty w blacie.', swatch: 'linear-gradient(150deg, #7A6140, #4A3A26)' },
+    { id: 'krzeslo-buk', name: 'Krzesło "Buk"', cat: 'krzesla', price: 690, desc: 'Gięte oparcie, siedzisko z plecionki papierowej.', swatch: 'linear-gradient(150deg, #9A8156, #6B5335)' },
+    { id: 'taboret', name: 'Taboret warsztatowy', cat: 'krzesla', price: 390, desc: 'Trzy nogi, regulowana wysokość, dąb bejcowany.', swatch: 'linear-gradient(150deg, #85704A, #574529)' },
+    { id: 'deska', name: 'Deska do serów', cat: 'dodatki', price: 180, desc: 'Z resztek blatów — każda sztuka ma inny rysunek słojów.', swatch: 'linear-gradient(150deg, #A88F62, #7A6140)' },
+    { id: 'swiecznik', name: 'Świecznik', cat: 'dodatki', price: 240, desc: 'Toczony ręcznie, wykończony woskiem pszczelim.', swatch: 'linear-gradient(150deg, #C9A227, #85704A)' }
+  ];
+  var FILTERS = [{ id: 'all', label: 'Wszystko' }, { id: 'stoly', label: 'Stoły' }, { id: 'krzesla', label: 'Krzesła' }, { id: 'dodatki', label: 'Dodatki' }];
+
+  var state = { filter: 'all', cart: [], cartOpen: false };
+
+  function money(v) { return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' zł'; }
+
+  function renderFilters() {
+    var box = document.getElementById('filter-chips');
+    box.innerHTML = '';
+    FILTERS.forEach(function (f) {
+      var active = state.filter === f.id;
+      var b = document.createElement('button');
+      b.className = 'chip';
+      b.textContent = f.label;
+      b.style.padding = '10px 20px';
+      b.style.borderRadius = '4px';
+      b.style.fontSize = '14px';
+      b.style.fontWeight = '600';
+      b.style.background = active ? '#C9A227' : 'transparent';
+      b.style.color = active ? '#1F2E27' : '#E9E4D8';
+      b.style.border = '1.5px solid ' + (active ? '#C9A227' : '#3C4F45');
+      b.addEventListener('click', function () { state.filter = f.id; renderFilters(); renderProducts(); });
+      box.appendChild(b);
+    });
+  }
+
+  function renderProducts() {
+    var box = document.getElementById('product-grid');
+    box.innerHTML = '';
+    var visible = state.filter === 'all' ? CATALOG : CATALOG.filter(function (p) { return p.cat === state.filter; });
+    visible.forEach(function (p) {
+      var card = document.createElement('div');
+      card.className = 'klon-card';
+      card.style.cssText = 'background:#26372E;border:1px solid #2C3D34;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;';
+      card.innerHTML =
+        '<div style="width:100%;aspect-ratio:4/3;background:' + p.swatch + ';"></div>' +
+        '<div style="padding:20px;display:flex;flex-direction:column;gap:10px;flex-grow:1;">' +
+          '<span style="font-family:\'Oswald\',system-ui,sans-serif;font-size:18px;letter-spacing:0.03em;">' + p.name + '</span>' +
+          '<span style="font-size:13.5px;line-height:1.5;color:#9BAA9F;flex-grow:1;">' + p.desc + '</span>' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px;">' +
+            '<span style="font-size:17px;font-weight:600;color:#C9A227;">' + money(p.price) + '</span>' +
+            '<button class="klon-btn add-btn" data-id="' + p.id + '" style="background:#C9A227;color:#1F2E27;padding:9px 16px;border-radius:4px;font-size:13.5px;font-weight:600;white-space:nowrap;">Do koszyka</button>' +
+          '</div>' +
+        '</div>';
+      box.appendChild(card);
+    });
+    box.querySelectorAll('.add-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        state.cart.push(btn.getAttribute('data-id'));
+        state.cartOpen = true;
+        renderCart();
+      });
+    });
+  }
+
+  function renderCart() {
+    document.getElementById('cart-count-label').textContent = 'Koszyk (' + state.cart.length + ')';
+    document.getElementById('cart-panel').hidden = !state.cartOpen;
+
+    var counts = {};
+    state.cart.forEach(function (id) { counts[id] = (counts[id] || 0) + 1; });
+    var total = 0;
+    var lines = '';
+    Object.keys(counts).forEach(function (id) {
+      var prod = CATALOG.filter(function (p) { return p.id === id; })[0];
+      var lineTotal = prod.price * counts[id];
+      total += lineTotal;
+      lines += '<div style="display:flex;justify-content:space-between;gap:16px;font-size:14.5px;padding-bottom:8px;border-bottom:1px solid #2C3D34;">' +
+        '<span>' + prod.name + ' × ' + counts[id] + '</span>' +
+        '<span style="color:#C9A227;font-weight:600;white-space:nowrap;">' + money(lineTotal) + '</span></div>';
+    });
+
+    var content = document.getElementById('cart-content');
+    if (state.cart.length === 0) {
+      content.innerHTML = '<span style="font-size:14.5px;color:#9BAA9F;">Koszyk jest pusty — dodaj coś z naszych mebli poniżej.</span>';
+    } else {
+      content.innerHTML = '<div style="display:flex;flex-direction:column;gap:10px;">' + lines +
+        '<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:6px;">' +
+          '<span style="font-size:15px;font-weight:600;">Razem: <span style="color:#C9A227;">' + money(total) + '</span></span>' +
+          '<button id="clear-cart" class="klon-btn" style="border:1.5px solid #3C4F45;background:none;color:#E9E4D8;padding:9px 18px;border-radius:4px;font-size:13.5px;font-weight:600;">Wyczyść koszyk</button>' +
+        '</div></div>';
+      document.getElementById('clear-cart').addEventListener('click', function () { state.cart = []; renderCart(); });
+    }
+  }
+
+  document.getElementById('cart-toggle').addEventListener('click', function () {
+    state.cartOpen = !state.cartOpen;
+    renderCart();
+  });
+
+  renderFilters(); renderProducts(); renderCart();
+</script>
+
+</body>
+</html>

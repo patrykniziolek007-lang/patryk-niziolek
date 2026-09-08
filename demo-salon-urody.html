@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Aura — demo</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #FBEFF1; color: #33222A; font-family: 'Work Sans', system-ui, sans-serif; }
+  a { text-decoration: none; color: inherit; }
+  .aura-btn { cursor: pointer; border: none; font-family: inherit; }
+  .aura-btn:hover { opacity: 0.88; }
+  .aura-link:hover { opacity: 0.6; }
+  .chip { cursor: pointer; border: none; font-family: inherit; }
+  @media (max-width: 820px) {
+    .aura-hero { grid-template-columns: 1fr !important; }
+    .aura-nav { display: none !important; }
+    .aura-cols { grid-template-columns: 1fr !important; }
+    .aura-book { grid-template-columns: 1fr !important; }
+    .aura-pad { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PASEK DEMO -->
+<div style="position: sticky; top: 0; z-index: 50; display: flex; justify-content: center; background: #1C1C1A; border-bottom: 1px solid #34332F;">
+  <div class="aura-pad" style="width: 100%; max-width: 1120px; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+    <a href="index.html#realizacje" style="display: flex; align-items: center; gap: 8px; color: #FBFAF7; font-size: 14px; font-weight: 600;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5 8 12l6.5 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      Wróć do portfolio
+    </a>
+    <span style="font-size: 12.5px; color: #9B9890; text-align: right;">Strona demonstracyjna — projekt przykładowy, nie strona istniejącej firmy</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div style="display: flex; justify-content: center; border-bottom: 1px solid #F3DDE1;">
+  <div class="aura-pad" style="width: 100%; max-width: 1080px; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+    <span style="font-family: 'Josefin Sans', system-ui, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.12em; text-transform: uppercase; color: #B85C74;">Studio Aura</span>
+    <div class="aura-nav" style="display: flex; gap: 28px; font-size: 14px; font-weight: 500;">
+      <a class="aura-link" href="#aura-uslugi">Usługi</a>
+      <a class="aura-link" href="#aura-rezerwacja">Rezerwacja</a>
+      <a class="aura-link" href="#aura-kontakt">Kontakt</a>
+    </div>
+    <a class="aura-btn" href="#aura-rezerwacja" style="background: #B85C74; color: #FBEFF1; padding: 10px 20px; border-radius: 4px; font-size: 14px; font-weight: 600; white-space: nowrap; display: inline-block;">Umów wizytę</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div style="display: flex; justify-content: center; padding: 76px 32px;" class="aura-pad">
+  <div class="aura-hero" style="width: 100%; max-width: 1080px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start;">
+      <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B85C74; font-weight: 600;">Salon fryzjerski</span>
+      <h1 style="font-family: 'Josefin Sans', system-ui, sans-serif; font-size: 48px; line-height: 1.1; font-weight: 700; margin: 0;">Twoje włosy w dobrych rękach</h1>
+      <p style="font-size: 16.5px; line-height: 1.65; color: #6E5A61; max-width: 420px; margin: 0;">Strzyżenie, koloryzacja i pielęgnacja w kameralnym salonie. Umów wizytę online w niecałą minutę — bez telefonów i czekania na oddzwonienie.</p>
+      <a class="aura-btn" href="#aura-rezerwacja" style="background: #B85C74; color: #FBEFF1; padding: 14px 28px; border-radius: 4px; font-size: 15px; font-weight: 600; margin-top: 4px; display: inline-block;">Zarezerwuj termin</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+      <div style="aspect-ratio: 3 / 4; border-radius: 200px 200px 8px 8px; background: linear-gradient(170deg, #F3D7DD, #B85C74);"></div>
+      <div style="aspect-ratio: 3 / 4; border-radius: 8px 8px 200px 200px; background: linear-gradient(170deg, #E9C3CB, #F3D7DD); margin-top: 32px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- USŁUGI -->
+<div id="aura-uslugi" style="display: flex; justify-content: center; padding: 24px 32px 72px; scroll-margin-top: 60px;" class="aura-pad">
+  <div style="width: 100%; max-width: 1080px; display: flex; flex-direction: column; gap: 28px;">
+    <h2 style="font-family: 'Josefin Sans', system-ui, sans-serif; font-size: 32px; font-weight: 700; margin: 0;">Cennik usług</h2>
+    <div id="service-list" class="aura-cols" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;"></div>
+    <span style="font-size: 12.5px; color: #9B8189;">Ceny przykładowe, na potrzeby demonstracji.</span>
+  </div>
+</div>
+
+<!-- REZERWACJA -->
+<div id="aura-rezerwacja" style="display: flex; justify-content: center; padding: 0 32px 76px; scroll-margin-top: 60px;" class="aura-pad">
+  <div style="width: 100%; max-width: 1080px; background: #FFFFFF; border: 1px solid #F3DDE1; border-radius: 12px; padding: 40px;">
+
+    <div id="booking-form" style="display: flex; flex-direction: column; gap: 30px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <h2 style="font-family: 'Josefin Sans', system-ui, sans-serif; font-size: 30px; font-weight: 700; margin: 0;">Umów wizytę online</h2>
+        <p style="font-size: 15px; color: #6E5A61; margin: 0;">Wybierz usługę, dzień i godzinę — rezerwacja zajmuje mniej niż minutę.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8189; font-weight: 600;">1. Usługa</span>
+        <div id="service-chips" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8189; font-weight: 600;">2. Dzień</span>
+        <div id="day-chips" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8189; font-weight: 600;">3. Godzina</span>
+        <div id="hour-chips" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+      </div>
+      <div class="aura-book" style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; background: #FBEFF1; border-radius: 8px; padding: 22px 24px;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span id="summary-title" style="font-size: 15.5px; font-weight: 600;"></span>
+          <span id="summary-detail" style="font-size: 14px; color: #6E5A61;"></span>
+        </div>
+        <button id="book-btn" class="aura-btn" style="padding: 14px 28px; border-radius: 4px; font-size: 15px; font-weight: 600; text-align: center;">Rezerwuję wizytę</button>
+      </div>
+    </div>
+
+    <div id="booking-done" hidden style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start; padding: 20px 0;">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" style="color: #B85C74;"><circle cx="12" cy="12" r="9.2" stroke="currentColor" stroke-width="1.4"></circle><path d="m8.4 12.2 2.4 2.4 4.8-4.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <h2 style="font-family: 'Josefin Sans', system-ui, sans-serif; font-size: 28px; font-weight: 700; margin: 0;">Termin zarezerwowany</h2>
+      <p id="booking-confirmation" style="font-size: 16px; line-height: 1.6; color: #6E5A61; margin: 0;"></p>
+      <button id="booking-again" class="aura-btn" style="border: 1.5px solid #E9C3CB; background: none; color: #33222A; padding: 12px 24px; border-radius: 4px; font-size: 14.5px; font-weight: 600;">Umów kolejną wizytę</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- KONTAKT -->
+<div id="aura-kontakt" style="display: flex; justify-content: center; padding: 44px 32px; border-top: 1px solid #F3DDE1; scroll-margin-top: 60px;" class="aura-pad">
+  <div class="aura-cols" style="width: 100%; max-width: 1080px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-family: 'Josefin Sans', system-ui, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; color: #B85C74;">Studio Aura</span>
+      <span style="font-size: 14px; color: #9B8189;">ul. Kwiatowa 5</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8189; font-weight: 600;">Godziny</span>
+      <span style="font-size: 14px; color: #6E5A61;">Pon–Pt 9:00–19:00</span>
+      <span style="font-size: 14px; color: #6E5A61;">Sob 9:00–14:00</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8189; font-weight: 600;">Kontakt</span>
+      <span style="font-size: 14px; color: #6E5A61;">salon@przyklad.pl</span>
+      <span style="font-size: 14px; color: #6E5A61;">000 000 000</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  var SERVICES = [
+    { id: 'strzyzenie', name: 'Strzyżenie damskie', time: 'ok. 45 min', price: '90 zł' },
+    { id: 'koloryzacja', name: 'Koloryzacja', time: 'ok. 2 godz.', price: '240 zł' },
+    { id: 'modelowanie', name: 'Modelowanie', time: 'ok. 30 min', price: '70 zł' },
+    { id: 'regeneracja', name: 'Zabieg regenerujący', time: 'ok. 60 min', price: '150 zł' }
+  ];
+  var DAYS = ['Pon 8.09', 'Wt 9.09', 'Śr 10.09', 'Czw 11.09', 'Pt 12.09', 'Sob 13.09'];
+  var HOURS = ['9:00', '10:30', '12:00', '14:00', '15:30', '17:00'];
+
+  var state = { service: 'strzyzenie', day: null, hour: null };
+
+  function chip(label, active) {
+    var b = document.createElement('button');
+    b.className = 'chip';
+    b.textContent = label;
+    b.style.padding = '11px 18px';
+    b.style.borderRadius = '4px';
+    b.style.fontSize = '14.5px';
+    b.style.fontWeight = '600';
+    b.style.background = active ? '#B85C74' : '#FFFFFF';
+    b.style.color = active ? '#FBEFF1' : '#33222A';
+    b.style.border = '1.5px solid ' + (active ? '#B85C74' : '#F0D5DB');
+    return b;
+  }
+
+  function renderServiceList() {
+    var box = document.getElementById('service-list');
+    box.innerHTML = '';
+    SERVICES.forEach(function (s) {
+      var row = document.createElement('div');
+      row.style.cssText = 'background:#FFFFFF;border:1px solid #F3DDE1;border-radius:8px;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;';
+      row.innerHTML =
+        '<div style="display:flex;flex-direction:column;gap:4px;">' +
+          '<span style="font-size:16px;font-weight:600;">' + s.name + '</span>' +
+          '<span style="font-size:13.5px;color:#9B8189;">' + s.time + '</span>' +
+        '</div>' +
+        '<span style="font-family:\'Josefin Sans\',system-ui,sans-serif;font-size:19px;font-weight:700;color:#B85C74;white-space:nowrap;">' + s.price + '</span>';
+      box.appendChild(row);
+    });
+  }
+
+  function renderServiceChips() {
+    var box = document.getElementById('service-chips');
+    box.innerHTML = '';
+    SERVICES.forEach(function (s) {
+      var b = chip(s.name, state.service === s.id);
+      b.addEventListener('click', function () { state.service = s.id; renderServiceChips(); renderSummary(); });
+      box.appendChild(b);
+    });
+  }
+
+  function renderDayChips() {
+    var box = document.getElementById('day-chips');
+    box.innerHTML = '';
+    DAYS.forEach(function (d) {
+      var b = chip(d, state.day === d);
+      b.style.minWidth = '76px';
+      b.style.textAlign = 'center';
+      b.addEventListener('click', function () { state.day = d; renderDayChips(); renderSummary(); });
+      box.appendChild(b);
+    });
+  }
+
+  function renderHourChips() {
+    var box = document.getElementById('hour-chips');
+    box.innerHTML = '';
+    HOURS.forEach(function (h) {
+      var b = chip(h, state.hour === h);
+      b.addEventListener('click', function () { state.hour = h; renderHourChips(); renderSummary(); });
+      box.appendChild(b);
+    });
+  }
+
+  function currentService() {
+    var found = null;
+    SERVICES.forEach(function (s) { if (s.id === state.service) found = s; });
+    return found || SERVICES[0];
+  }
+
+  function renderSummary() {
+    var s = currentService();
+    var ready = !!state.day && !!state.hour;
+    document.getElementById('summary-title').textContent = s.name + ' — ' + s.price;
+    document.getElementById('summary-detail').textContent = ready ? (state.day + ', godz. ' + state.hour) : 'Wybierz dzień i godzinę wizyty';
+    var btn = document.getElementById('book-btn');
+    btn.style.background = ready ? '#B85C74' : '#E9C3CB';
+    btn.style.color = ready ? '#FBEFF1' : '#FFFFFF';
+  }
+
+  document.getElementById('book-btn').addEventListener('click', function () {
+    if (!state.day || !state.hour) return;
+    var s = currentService();
+    document.getElementById('booking-confirmation').textContent =
+      s.name + ' — ' + state.day + ', godz. ' + state.hour + '. Potwierdzenie wyślemy SMS-em na godzinę przed wizytą.';
+    document.getElementById('booking-form').hidden = true;
+    document.getElementById('booking-done').hidden = false;
+  });
+
+  document.getElementById('booking-again').addEventListener('click', function () {
+    state.day = null; state.hour = null;
+    renderDayChips(); renderHourChips(); renderSummary();
+    document.getElementById('booking-form').hidden = false;
+    document.getElementById('booking-done').hidden = true;
+  });
+
+  renderServiceList(); renderServiceChips(); renderDayChips(); renderHourChips(); renderSummary();
+</script>
+
+</body>
+</html>
