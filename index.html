@@ -133,6 +133,72 @@
     .area-grid { grid-template-columns: 1fr !important; }
     h2 { font-size: 27px !important; }
   }
+
+  /* ——— dopracowanie wizualne ——— */
+  :root {
+    --sh-1: 0 1px 2px rgba(28,28,26,0.04), 0 2px 8px -2px rgba(28,28,26,0.06);
+    --sh-2: 0 2px 4px rgba(28,28,26,0.04), 0 14px 30px -14px rgba(28,28,26,0.16);
+    --sh-3: 0 4px 10px rgba(28,28,26,0.05), 0 28px 54px -22px rgba(28,28,26,0.22);
+    --sh-teal: 0 4px 10px rgba(11,110,110,0.08), 0 26px 46px -24px rgba(11,110,110,0.45);
+    --line-warm: #E8E4DA;
+  }
+  /* delikatne ziarno — zdejmuje wrażenie płaskiego wydruku */
+  body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  h1, h2 { letter-spacing: -0.022em; }
+  h3 { letter-spacing: -0.012em; }
+
+  /* przyciski */
+  .cta-primary {
+    border-radius: 10px !important;
+    background-image: linear-gradient(180deg, #0E8080 0%, #0B6E6E 100%);
+    box-shadow: 0 1px 2px rgba(11,110,110,0.28), 0 8px 18px -9px rgba(11,110,110,0.55);
+  }
+  .cta-primary:hover { box-shadow: 0 2px 4px rgba(11,110,110,0.3), 0 14px 26px -10px rgba(11,110,110,0.6); }
+  .cta-secondary {
+    border-radius: 10px !important; background: rgba(255,255,255,0.72);
+    box-shadow: var(--sh-1); backdrop-filter: blur(4px);
+  }
+
+  /* karty usług */
+  .service-card {
+    border-radius: 18px !important; border-color: var(--line-warm) !important;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #FDFCF8 100%);
+    box-shadow: var(--sh-1); padding: 30px !important;
+  }
+  .service-card:hover { box-shadow: var(--sh-teal) !important; }
+  .service-icon {
+    width: 46px; height: 46px; border-radius: 14px;
+    background: rgba(11,110,110,0.085); align-items: center; justify-content: center;
+    box-shadow: inset 0 0 0 1px rgba(11,110,110,0.14);
+  }
+
+  /* podglądy realizacji — równa wysokość i porządek w kolumnie */
+  .example-card { height: 100%; }
+  .example-shot { border-radius: 14px !important; box-shadow: var(--sh-2) !important; }
+  .example-go { margin-top: auto; padding-top: 4px; }
+
+  /* FAQ */
+  .faq-item { border-radius: 14px !important; border-color: var(--line-warm) !important; box-shadow: var(--sh-1); }
+
+  /* kroki procesu */
+  .step-num { box-shadow: 0 0 0 4px rgba(11,110,110,0.10), 0 6px 14px -6px rgba(11,110,110,0.6); }
+
+  /* miękkie przejścia między sekcjami zamiast twardych krawędzi */
+  .soft-top { position: relative; }
+  .soft-top::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 90px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(251,250,247,0.85) 0%, rgba(251,250,247,0) 100%);
+  }
+  /* poświata w ciemnych sekcjach */
+  .dark-glow { position: relative; overflow: hidden; }
+  .dark-glow::before {
+    content: ""; position: absolute; top: -220px; right: -160px; width: 620px; height: 620px;
+    border-radius: 50%; background: radial-gradient(circle, rgba(127,216,200,0.16) 0%, rgba(127,216,200,0) 70%);
+    pointer-events: none;
+  }
 </style>
 </head>
 <body>
@@ -198,7 +264,7 @@
     </div>
 
     <div class="hero-art" style="position: relative; display: flex; justify-content: center;">
-      <div class="floaty" style="width: 100%; max-width: 420px; background: #FFFFFF; border: 1px solid #EAE7E0; border-radius: 12px; box-shadow: 0 24px 48px -24px rgba(28,28,26,0.18); overflow: hidden;">
+      <div class="floaty" style="width: 100%; max-width: 420px; background: #FFFFFF; border: 1px solid #EDEAE2; border-radius: 16px; box-shadow: 0 2px 6px rgba(28,28,26,0.04), 0 30px 60px -28px rgba(28,28,26,0.28); overflow: hidden;">
         <div style="display: flex; align-items: center; gap: 6px; padding: 12px 16px; border-bottom: 1px solid #EAE7E0;">
           <div style="width: 9px; height: 9px; border-radius: 50%; background: #E3E0D8;"></div>
           <div style="width: 9px; height: 9px; border-radius: 50%; background: #E3E0D8;"></div>
@@ -208,22 +274,51 @@
             <span class="caret" style="width: 1.5px; height: 9px; background: #0B6E6E; display: inline-block;"></span>
           </div>
         </div>
-        <div style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
-          <div class="sk" style="height: 14px; width: 55%; border-radius: 3px; background: #EDEAE2;"></div>
-          <div class="sk sk-2" style="height: 34px; width: 85%; border-radius: 4px; background: #0B6E6E; opacity: 0.14;"></div>
-          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 4px;">
-            <div class="sk" style="height: 64px; border-radius: 6px; background: #F3F1EB;"></div>
-            <div class="sk sk-2" style="height: 64px; border-radius: 6px; background: #F3F1EB;"></div>
-            <div class="sk sk-3" style="height: 64px; border-radius: 6px; background: #F3F1EB;"></div>
+        <div style="padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 15px;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 7px;">
+              <div style="width: 15px; height: 15px; border-radius: 5px; background: #0B6E6E;"></div>
+              <div style="width: 54px; height: 7px; border-radius: 3px; background: #DCD8CE;"></div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <div style="width: 26px; height: 6px; border-radius: 3px; background: #E9E5DC;"></div>
+              <div style="width: 26px; height: 6px; border-radius: 3px; background: #E9E5DC;"></div>
+              <div style="width: 26px; height: 6px; border-radius: 3px; background: #E9E5DC;"></div>
+            </div>
           </div>
-          <div class="sk sk-3" style="height: 10px; width: 90%; border-radius: 3px; background: #EDEAE2; margin-top: 6px;"></div>
-          <div class="sk sk-2" style="height: 10px; width: 70%; border-radius: 3px; background: #EDEAE2;"></div>
+          <div style="display: flex; flex-direction: column; gap: 7px; margin-top: 2px;">
+            <div class="sk" style="height: 13px; width: 80%; border-radius: 4px; background: #333F3A;"></div>
+            <div class="sk sk-2" style="height: 13px; width: 54%; border-radius: 4px; background: #333F3A;"></div>
+            <div style="height: 6px; width: 88%; border-radius: 3px; background: #E9E5DC; margin-top: 4px;"></div>
+            <div style="height: 6px; width: 72%; border-radius: 3px; background: #E9E5DC;"></div>
+            <div style="display: flex; gap: 8px; margin-top: 8px;">
+              <div style="height: 23px; width: 78px; border-radius: 7px; background: #0B6E6E;"></div>
+              <div style="height: 23px; width: 64px; border-radius: 7px; border: 1.5px solid #E2DED4;"></div>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin-top: 4px;">
+            <div style="border: 1px solid #EFECE4; border-radius: 9px; padding: 10px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="width: 15px; height: 15px; border-radius: 5px; background: rgba(11,110,110,0.18);"></div>
+              <div style="height: 5px; width: 82%; border-radius: 2px; background: #E9E5DC;"></div>
+              <div style="height: 5px; width: 58%; border-radius: 2px; background: #F0EDE6;"></div>
+            </div>
+            <div style="border: 1px solid #EFECE4; border-radius: 9px; padding: 10px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="width: 15px; height: 15px; border-radius: 5px; background: rgba(11,110,110,0.18);"></div>
+              <div style="height: 5px; width: 82%; border-radius: 2px; background: #E9E5DC;"></div>
+              <div style="height: 5px; width: 58%; border-radius: 2px; background: #F0EDE6;"></div>
+            </div>
+            <div style="border: 1px solid #EFECE4; border-radius: 9px; padding: 10px; display: flex; flex-direction: column; gap: 6px;">
+              <div style="width: 15px; height: 15px; border-radius: 5px; background: rgba(11,110,110,0.18);"></div>
+              <div style="height: 5px; width: 82%; border-radius: 2px; background: #E9E5DC;"></div>
+              <div style="height: 5px; width: 58%; border-radius: 2px; background: #F0EDE6;"></div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- mały telefon nachodzący na podgląd -->
-      <div class="floaty" style="position: absolute; right: -6px; bottom: -26px; width: 104px; animation-delay: 1.4s;">
-        <div style="background: #FFFFFF; border: 1px solid #EAE7E0; border-radius: 14px; padding: 8px 7px; box-shadow: 0 18px 34px -18px rgba(28,28,26,0.3);">
+      <div class="floaty" style="position: absolute; right: -14px; bottom: -34px; width: 106px; animation-delay: 1.4s;">
+        <div style="background: #FFFFFF; border: 1px solid #EAE7E0; border-radius: 16px; padding: 9px 8px; box-shadow: 0 0 0 5px #F7F5F0, 0 4px 10px rgba(28,28,26,0.06), 0 22px 40px -20px rgba(28,28,26,0.38);">
           <div style="height: 4px; width: 28px; border-radius: 2px; background: #E9E6DE; margin: 0 auto 7px;"></div>
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <div style="height: 26px; border-radius: 5px; background: #0B6E6E; opacity: 0.16;"></div>
@@ -302,13 +397,19 @@
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #E3D3B4;"></div>
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #E3D3B4;"></div>
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #E3D3B4;"></div>
+            <div style="flex: 1; height: 10px; margin-left: 6px; border-radius: 3px; background: #E3D3B4; opacity: 0.55;"></div>
           </div>
-          <div style="padding: 18px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="height: 10px; width: 40%; border-radius: 3px; background: #C1613B;"></div>
-            <div style="height: 46px; width: 100%; border-radius: 6px; background: #C1613B; opacity: 0.18;"></div>
-            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
-              <div style="height: 40px; border-radius: 5px; background: #F1E2CB;"></div>
-              <div style="height: 40px; border-radius: 5px; background: #F1E2CB;"></div>
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 9px;">
+            <div style="height: 8px; width: 44%; border-radius: 3px; background: #C1613B;"></div>
+            <div style="height: 40px; border-radius: 8px; background: #C1613B; opacity: 0.18;"></div>
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px;">
+              <div style="height: 26px; border-radius: 6px; background: #F1E2CB;"></div>
+              <div style="height: 26px; border-radius: 6px; background: #F1E2CB;"></div>
+              <div style="height: 26px; border-radius: 6px; background: #F1E2CB;"></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 7px; margin-top: 2px;">
+              <div style="height: 16px; width: 48px; border-radius: 5px; background: #C1613B;"></div>
+              <div style="height: 5px; flex: 1; border-radius: 2px; background: #F1E2CB;"></div>
             </div>
           </div>
         </div>
@@ -323,15 +424,20 @@
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #E9C3CB;"></div>
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #E9C3CB;"></div>
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #E9C3CB;"></div>
+            <div style="flex: 1; height: 10px; margin-left: 6px; border-radius: 3px; background: #E9C3CB; opacity: 0.55;"></div>
           </div>
-          <div style="padding: 18px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="height: 10px; width: 50%; border-radius: 3px; background: #B85C74;"></div>
-            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
-              <div style="height: 54px; border-radius: 50%; background: #F3D7DD;"></div>
-              <div style="height: 54px; border-radius: 50%; background: #B85C74; opacity: 0.25;"></div>
-              <div style="height: 54px; border-radius: 50%; background: #F3D7DD;"></div>
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 9px;">
+            <div style="height: 8px; width: 44%; border-radius: 3px; background: #B85C74;"></div>
+            <div style="height: 40px; border-radius: 8px; background: #B85C74; opacity: 0.18;"></div>
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px;">
+              <div style="height: 26px; border-radius: 6px; background: #F3D7DD;"></div>
+              <div style="height: 26px; border-radius: 6px; background: #F3D7DD;"></div>
+              <div style="height: 26px; border-radius: 6px; background: #F3D7DD;"></div>
             </div>
-            <div style="height: 8px; width: 70%; border-radius: 3px; background: #F3D7DD;"></div>
+            <div style="display: flex; align-items: center; gap: 7px; margin-top: 2px;">
+              <div style="height: 16px; width: 48px; border-radius: 5px; background: #B85C74;"></div>
+              <div style="height: 5px; flex: 1; border-radius: 2px; background: #F3D7DD;"></div>
+            </div>
           </div>
         </div>
         <div style="font-size: 15px; font-weight: 700; color: #1C1C1A;">Salony urody i gabinety</div>
@@ -345,12 +451,20 @@
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #3C4F45;"></div>
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #3C4F45;"></div>
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #3C4F45;"></div>
+            <div style="flex: 1; height: 10px; margin-left: 6px; border-radius: 3px; background: #3C4F45; opacity: 0.55;"></div>
           </div>
-          <div style="padding: 18px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="height: 10px; width: 45%; border-radius: 3px; background: #C9A227;"></div>
-            <div style="height: 46px; width: 100%; border-radius: 6px; border: 1px solid #C9A227; opacity: 0.6;"></div>
-            <div style="height: 8px; width: 80%; border-radius: 3px; background: #3C4F45;"></div>
-            <div style="height: 8px; width: 60%; border-radius: 3px; background: #3C4F45;"></div>
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 9px;">
+            <div style="height: 8px; width: 44%; border-radius: 3px; background: #C9A227;"></div>
+            <div style="height: 40px; border-radius: 8px; background: #C9A227; opacity: 0.18;"></div>
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px;">
+              <div style="height: 26px; border-radius: 6px; background: #33453B;"></div>
+              <div style="height: 26px; border-radius: 6px; background: #33453B;"></div>
+              <div style="height: 26px; border-radius: 6px; background: #33453B;"></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 7px; margin-top: 2px;">
+              <div style="height: 16px; width: 48px; border-radius: 5px; background: #C9A227;"></div>
+              <div style="height: 5px; flex: 1; border-radius: 2px; background: #33453B;"></div>
+            </div>
           </div>
         </div>
         <div style="font-size: 15px; font-weight: 700; color: #1C1C1A;">Rzemiosło i manufaktury</div>
@@ -363,7 +477,7 @@
 </div>
 
 <!-- DLACZEGO NIE SZABLON (sekcja ciemna) -->
-<div class="section-pad" style="display: flex; justify-content: center; padding: 96px 40px; background: #12211C; color: #FBFAF7;">
+<div class="section-pad dark-glow" style="display: flex; justify-content: center; padding: 96px 40px; background: #12211C; color: #FBFAF7;">
   <div style="width: 100%; max-width: 1000px; display: flex; flex-direction: column; gap: 44px;">
 
     <div class="reveal" style="display: flex; flex-direction: column; gap: 12px; max-width: 620px;">
@@ -457,7 +571,7 @@
 </div>
 
 <!-- OBSZAR DZIAŁANIA -->
-<div id="obszar" class="anchor-section" style="background: #12211C; color: #FBFAF7; padding: 76px 0;">
+<div id="obszar" class="anchor-section dark-glow" style="background: #12211C; color: #FBFAF7; padding: 76px 0;">
   <div class="section-pad" style="display: flex; justify-content: center; padding: 0 40px 40px;">
     <div class="area-grid reveal" style="width: 100%; max-width: 1000px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
       <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -587,7 +701,7 @@
 <div id="kontakt" class="anchor-section section-pad" style="display: flex; justify-content: center; padding: 92px 40px 96px;">
   <div style="width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 20px;">
 
-    <div class="contact-grid reveal" style="background: #12211C; border-radius: 16px; padding: 56px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+    <div class="contact-grid reveal dark-glow" style="background: #12211C; border-radius: 20px; padding: 56px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
       <div style="display: flex; flex-direction: column; gap: 12px;">
         <h2 style="font-size: 28px; font-weight: 700; color: #FBFAF7;">Porozmawiajmy o Twojej stronie</h2>
         <p style="font-size: 15.5px; line-height: 1.6; color: #B6C4BD; max-width: 420px;">Napisz maila, zadzwoń albo wypełnij formularz poniżej — odpowiadam szybko i chętnie doradzę, co sprawdzi się w Twojej sytuacji.</p>
